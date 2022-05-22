@@ -63,9 +63,9 @@ for json_file in args.files:
     with open(json_file) as f:
         data = json.load(f)
 
-        if StrictVersion(data['version']) >= StrictVersion("4.0"):
-            print('We don\'t know how to parse this version of SAST report')
-            sys.exit(1)
+        #if StrictVersion(data['version']) >= StrictVersion("4.0"):
+        #    print('We don\'t know how to parse this version of SAST report')
+        #    sys.exit(1)
 
         vulns = jsonpath_expr.find(data)
         for vuln in vulns:
